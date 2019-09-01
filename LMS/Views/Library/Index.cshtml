@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Library";
+}
+
+@model IEnumerable<BookModel>
+
+
+<h1 class="text-center">Library</h1>
+
+<div class="text-center mt-4 p-2">
+    <div class="btn-group text-white" role="group">
+        <a asp-controller="Library" asp-action="Add" class="btn btn-success"><i class="fa fa-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+
+<br>
+
+<div class="justify-items-end">
+    <div class="btn-group text-white" role="group">
+        <a asp-controller="Library" asp-action="ListView" class="btn btn-info"><i class="fa fa-list-ul mr-2"></i>View as List</a>
+    </div>
+</div>
+
+
+<div class="row mt-3">
+    @foreach (var book in Model)
+    {
+        <div class="card col-4 mt-5 p-5">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@book.Title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+                <a asp-route-id="@book.Id" asp-controller="Library" asp-action="Info">View More</a>
+            </div>
+        </div>
+    }
+</div>

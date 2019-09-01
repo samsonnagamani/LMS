@@ -29,3 +29,10 @@ C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\LMS.Views.pdb
 C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\LMS.dll
 C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\LMS.pdb
 C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\LMS.csproj.CopyComplete
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Branches\Index.g.cshtml.cs
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Library\Index.g.cshtml.cs
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Subscribers\Index.g.cshtml.cs
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Library\Info.g.cshtml.cs
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Library\Add.g.cshtml.cs
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Library\ListView.g.cshtml.cs
+C:\Users\samso\Documents\CS\LMS\LMS\obj\Debug\netcoreapp2.2\Razor\Views\Library\Edit.g.cshtml.cs

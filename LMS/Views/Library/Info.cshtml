@@ -1,0 +1,56 @@
+@model BookModel
+
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<br/>
+
+<div class="container">
+
+    <h2 class="display-4 text-center mb-4">@Model.Title</h2>
+
+    <div class="float-left mr-5">
+        <img src="https://via.placeholder.com/420x594" alt="Book Image" class="img-thumbnail rounded">
+    </div>
+
+    <br>
+
+    <div class="p-5">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Book ID: </strong>@Model.Id</li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Author: </strong>@Model.Author</li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Genre: </strong>@Model.Genre</li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Rating <em>(out of 5)</em>: </strong><span class="badge badge-success badge-pill">@Model.Rating</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Status: </strong>@(Model.Status ? "Available" : "Taken")
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Replacement Price: </strong><span class="badge badge-@(Model.Status ? "success" : "danger") badge-pill">£@Model.ReplacementPrice</span>
+            </li>
+
+            @if (!Model.Status)
+            {
+                <a asp-route-id="@Model.Id" asp-controller="Library" asp-action="SwitchStatus" class="btn btn-danger btn-block mt-5">Replace</a>
+            }
+            else
+            {
+                <a asp-route-id="@Model.Id" asp-controller="Library" asp-action="SwitchStatus" class="btn btn-success btn-block mt-5">Borrow</a>
+            }
+
+
+
+        </ul>
+
+    </div>
+</div>

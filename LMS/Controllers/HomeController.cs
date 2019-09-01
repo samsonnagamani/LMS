@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using LMS.Data;
 using Microsoft.AspNetCore.Mvc;
 using LMS.Models;
 
@@ -10,9 +11,18 @@ namespace LMS.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBookRepository _bookRepository;
+
+        public HomeController(IBookRepository bookRepository)
+        {
+            _bookRepository = bookRepository;
+        }
+        
         public IActionResult Index()
         {
-            return View();
+            var books = _bookRepository.GetAllBooks();
+            
+            return View(books);
         }
 
         public IActionResult Privacy()

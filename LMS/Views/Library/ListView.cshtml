@@ -1,0 +1,49 @@
+@model IEnumerable<BookModel>
+
+@{
+    ViewBag.Title = "Choose Book";
+}
+
+<h1 class="text-center">Library</h1>
+
+<div class="text-center mt-4 p-2">
+    <div class="btn-group text-white" role="group">
+        <a asp-controller="Library" asp-action="Add" class="btn btn-success"><i class="fa fa-plus-circle mr-2"></i>Add</a>
+    </div>
+</div>
+
+
+<table class="table mt-3">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Book ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var book in Model)
+    {
+        <tr>
+            <th scope="row">@book.Id</th>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Rating</td>
+            <td>@book.Genre</td>
+            <td><a asp-controller="Library" asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning btn-sm text-white">Edit</a></td>
+            <td>
+                <form asp-controller="Library" asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@book.Id">
+                    <input type="submit" class="btn btn-danger btn-sm text-white" value="Remove">
+                </form>
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>

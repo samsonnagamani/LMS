@@ -1,0 +1,55 @@
+@{
+    ViewBag.Title = "Edit Book";
+}
+
+@model BookModel
+
+<div class="text-center">
+
+    <h2 class="m-5">Edit Book</h2>
+
+    <div class="d-inline-flex align-items-center">
+        <form asp-controller="Library" asp-action="Edit" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" asp-for="Title" value="@Model.Title">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" asp-for="Author" value="@Model.Author">
+                </div>
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">&pound;</span>
+                </div>
+                <input type="text" class="form-control" value="@Model.ReplacementPrice" asp-for="ReplacementPrice">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <select asp-for="Status" class="form-control">
+                        @if (@Model.Status == true)
+                        {
+                            <option value="Available" selected>Available</option>
+                            <option value="Taken" >Taken</option>
+                        }
+                        else
+                        {
+                            <option value="Taken" selected>Taken</option>
+                            <option value="Available">Available</option>
+                        }
+
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <select asp-for="Genre" asp-items="@(GenreViewModel.Genres)" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="bookRating" placeholder="Rating (0-5)" value="@Model.Rating">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-warning btn-block">Edit Book</button>
+        </form>
+    </div>
+</div>
