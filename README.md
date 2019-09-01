@@ -1,6 +1,6 @@
 # LMS - Library Management System
 
-A Library Management System made with ASP.NEt Core.
+A Library Management System made with ASP.NET Core.
 
 ## Skills & Methods Used
 - Database Integration with EF Core
